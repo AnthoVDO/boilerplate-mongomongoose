@@ -69,7 +69,7 @@ const arrayOfPeople = [
   }
 ]
 
-const createManyPeople = (arrayOfPeople, done) => {
+const createManyPeople = (done) => {
 
   Person.create(arrayOfPeople, (err, data)=>{
     if(err) console.log(err)
