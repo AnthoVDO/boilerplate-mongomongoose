@@ -69,15 +69,17 @@ const arrayOfPeople = [
   }
 ]
 
-const createManyPeople = (done) => {
+const createManyPeople = (arrayOfPeople, done) => {
 
   Person.create(arrayOfPeople, (err, data)=>{
     if(err) console.log(err)
     else done(null , data);
   })
-
-  
 };
+
+createManyPeople(arrayOfPeople, done);
+
+
 
 const findPeopleByName = (personName, done) => {
   done(null /*, data*/);
