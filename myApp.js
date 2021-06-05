@@ -34,7 +34,23 @@ const personSchema = new Schema({
 
 let Person = mongoose.model("Person", personSchema);
 
+//FCC title Create and Save a Record of a Model
+
 const createAndSavePerson = (done) => {
+
+  const me = new Person({
+    name : "Antho",
+    age : 28,
+    favoriteFoods: ["Chocolate", "Beer", "Oats", "French fries", "Pizza", "Ice cream"]
+  })
+
+  me.save((err, data)=>{
+    if(err) return console.log(err)
+    else return console.log("Person created")
+  })
+
+
+
   done(null /*, data*/);
 };
 
