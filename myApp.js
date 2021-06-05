@@ -34,7 +34,7 @@ const personSchema = new Schema({
 
 let Person = mongoose.model("Person", personSchema);
 
-//FCC title Create and Save a Record of a Model
+// FCC title Create and Save a Record of a Model
 
 const createAndSavePerson = (done) => {
 
@@ -54,8 +54,29 @@ const createAndSavePerson = (done) => {
   
 };
 
+// Create Many Records with model.create()
+
+const arrayOfPeople = [
+  {
+    name: "Ash",
+    age: 1,
+    favoriteFoods: ["Tuna", "Mice", "Biscuit"]
+  },
+  {
+    name: "Diane",
+    age: "28",
+    favoriteFoods: ["French fries", "Salad", "Chocolate"]
+  }
+]
+
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+
+  Person.create(arrayOfPeople, (err, date)=>{
+    if(err) console.log(err)
+    else done(null , data);
+  })
+
+  
 };
 
 const findPeopleByName = (personName, done) => {
