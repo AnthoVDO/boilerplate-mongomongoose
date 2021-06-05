@@ -1,5 +1,17 @@
 require('dotenv').config();
+const mongoose = require("mongoose");
 
+mongoose.connect(process.env.MONGO_URI,
+  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+  },
+
+  (err, data)=>{
+    if(err) console.log(err)
+    else console.log("connected to mongodb")
+  }
+  )
 
 let Person;
 
