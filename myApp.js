@@ -45,13 +45,13 @@ const createAndSavePerson = (done) => {
   })
 
   me.save((err, data)=>{
-    if(err)  console.log(err)
-    else  console.log("Person created")
+    if(err)  return console.log(err)
+    done(null , data);
   })
 
 
 
-  done(null /*, data*/);
+  
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
