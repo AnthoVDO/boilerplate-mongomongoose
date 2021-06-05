@@ -64,7 +64,7 @@ const arrayOfPeople = [
   },
   {
     name: "Diane",
-    age: "28",
+    age: 28,
     favoriteFoods: ["French fries", "Salad", "Chocolate"]
   }
 ]
@@ -72,12 +72,10 @@ const arrayOfPeople = [
 const createManyPeople = (arrayOfPeople, done) => {
 
   Person.create(arrayOfPeople, (err, data)=>{
-    if(err) console.log(err)
-    else done(null , data);
+    if(err) return console.log(err)
+    else return done(null , data);
   })
 };
-
-createManyPeople(arrayOfPeople, done);
 
 
 
