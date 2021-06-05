@@ -71,7 +71,7 @@ const arrayOfPeople = [
 
 const createManyPeople = (arrayOfPeople, done) => {
 
-  Person.create(arrayOfPeople, (err, date)=>{
+  Person.create(arrayOfPeople, (err, data)=>{
     if(err) console.log(err)
     else done(null , data);
   })
