@@ -13,7 +13,6 @@ try {
 }
 const fs = require("fs");
 const path = require("path");
-const bodyParser = require("body-parser");
 const router = express.Router();
 
 const enableCORS = function (req, res, next) {
@@ -37,8 +36,8 @@ const enableCORS = function (req, res, next) {
 // wrong callbacks that will never be called
 const TIMEOUT = 10000;
 
-app.use(bodyParser.urlencoded({ extended: "false" }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: "false" }));
+app.use(express.json());
 
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "index.html"));
