@@ -93,13 +93,10 @@ const findPeopleByName = (personName, done) => {
 
 
 const findOneByFood = (food, done) => {
-  Person.findOne({food: food}, (err, data)=>{
+  Person.findOne({favoriteFoods: food}, (err, data)=>{
     if(err) console.log(err);
     else done(null , data);
-  })
-
-
-  
+  }) 
 };
 
 const findPersonById = (personId, done) => {
